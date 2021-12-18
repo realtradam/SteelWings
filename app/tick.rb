@@ -40,10 +40,10 @@ def tick args
   end
   if args.inputs.keyboard.keys[:down].include?(:space)
     if @pause
-      FF::Stg.remove FF::Scn::BoidRules
+      FF::Stg.add FF::Scn::BoidRules
       @pause = false
     else
-      FF::Stg.add FF::Scn::BoidRules
+      FF::Stg.remove FF::Scn::BoidRules
       @pause = true
     end
   end
