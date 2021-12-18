@@ -1,5 +1,5 @@
 FF::Scn::BoidRules.add(
-  FF::Sys.new('BoidBounds') do
+  FF::Sys.new('BoidBounds', priority: 50) do
     FF::Cmp::BoidBounds.each do |boid_bounds|
       boid = boid_bounds.entities[0].components[FF::Cmp::Boid][0]
 
