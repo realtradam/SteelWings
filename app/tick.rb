@@ -1,26 +1,43 @@
-FF::Ent.new(FF::Cmp::Sprite.new,
-            FF::Cmp::Boid.new(x: 10, y: 10, vx: 0, vy: 0),
-            FF::Cmp::BoidBounds.new,
-            FF::Cmp::BoidsAlignment.new,
-            FF::Cmp::BoidsCohesion.new)
-FF::Ent.new(FF::Cmp::Sprite.new,
-            FF::Cmp::Boid.new(x: 50, y: 50),
-            FF::Cmp::BoidBounds.new,
-            FF::Cmp::BoidsAlignment.new,
-            FF::Cmp::BoidsCohesion.new)
-FF::Ent.new(FF::Cmp::Sprite.new,
-            FF::Cmp::Boid.new(x: 70, y: 20),
-            FF::Cmp::BoidBounds.new,
-            FF::Cmp::BoidsAlignment.new,
-            FF::Cmp::BoidsCohesion.new)
-FF::Ent.new(FF::Cmp::DebugVectorArrow.new(length: 5),
-            FF::Cmp::Sprite.new,
-            FF::Cmp::Boid.new(x: 150, y: 250),
-            FF::Cmp::BoidBounds.new,
-            FF::Cmp::BoidsAlignment.new,
-            FF::Cmp::BoidsCohesion.new)
+debug_arrow = FF::Cmp::DebugVectorArrow.new(length: 5)
+FF::Ent.new(
+  FF::Cmp::Sprite.new,
+  FF::Cmp::Boid.new(x: 10, y: 10),
+  FF::Cmp::BoidBounds.new,
+  #FF::Cmp::BoidsAlignment.new,
+  FF::Cmp::BoidsSeparation.new,
+  #FF::Cmp::BoidsCohesion.new,
+  debug_arrow,
+)
+FF::Ent.new(
+  FF::Cmp::Sprite.new,
+  FF::Cmp::Boid.new(x: 50, y: 50),
+  FF::Cmp::BoidBounds.new,
+  #FF::Cmp::BoidsAlignment.new,
+  FF::Cmp::BoidsSeparation.new,
+  #FF::Cmp::BoidsCohesion.new,
+  debug_arrow,
+)
+FF::Ent.new(
+  FF::Cmp::Sprite.new,
+  FF::Cmp::Boid.new(x: 70, y: 20),
+  FF::Cmp::BoidBounds.new,
+  #FF::Cmp::BoidsAlignment.new,
+  FF::Cmp::BoidsSeparation.new,
+  #FF::Cmp::BoidsCohesion.new,
+  debug_arrow,
+)
+FF::Ent.new(
+  FF::Cmp::Sprite.new,
+  FF::Cmp::Boid.new(x: 150, y: 250),
+  FF::Cmp::BoidBounds.new,
+  #FF::Cmp::BoidsAlignment.new,
+  FF::Cmp::BoidsSeparation.new,
+  #FF::Cmp::BoidsCohesion.new,
+  debug_arrow,
+)
 FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)
-@pause = false
+@pause = true
+FF::Stg.remove FF::Scn::BoidRules
 def tick args
   args.outputs.background_color = [0,0,0]
   FelFlame::Stage.call
