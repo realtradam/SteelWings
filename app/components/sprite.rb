@@ -16,6 +16,6 @@ FF::Cmp.new("Sprite", props: {
   flip_vertically: false,
   flip_horizontally: false,
   angle_anchor_x: 0.5,
-  angle_anchor_y: 1.0,
+  angle_anchor_y: 0.5,
   blendmode_enum: 1
 })

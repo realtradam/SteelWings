@@ -6,9 +6,9 @@ FF::Scn::BoidRules.add(
 
       FF::Cmp::Boid.each do |boid_check|
         next if boid_check == boid_update
-        
+
         if Math.sqrt(((-boid_check.x + boid_update.x)**2) + ((-boid_check.y + boid_update.y)**2)).abs < separation.distance
-        #if (boid_check.x - boid_update.x).abs < separation.distance and (boid_check.y - boid_update.y).abs < separation.distance
+          #if (boid_check.x - boid_update.x).abs < separation.distance and (boid_check.y - boid_update.y).abs < separation.distance
           newvec[0] -= boid_check.x - boid_update.x
           newvec[1] -= boid_check.y - boid_update.y
         end
@@ -19,8 +19,8 @@ FF::Scn::BoidRules.add(
       #  puts "cx: #{boid_update.cx} cy: #{boid_update.cy}"
       #  puts "vx: #{boid_update.vx} vy: #{boid_update.vy}"
       #end
-      boid_update.cx += newvec[0].to_f * separation.strength
-      boid_update.cy += newvec[1].to_f * separation.strength
+      boid_update.cx += (newvec[0].to_f * separation.strength.to_f)
+      boid_update.cy += (newvec[1].to_f * separation.strength.to_f)
     end
   end
 )

@@ -5,7 +5,7 @@ FF::Scn::BoidRules.add(
       boid.vy += boid.cy
       boid.x += boid.vx
       boid.y += boid.vy
-      # TODO: based on direction of the vector, needs to update the rotation of sprite too
+
     end
   end
 )
