@@ -11,15 +11,15 @@ FF::Scn::TitleScreen.add(
       if mouse.x > hitbox.x and mouse.x < hitbox.x + hitbox.w and mouse.y > hitbox.y and mouse.y < hitbox.y + hitbox.h
         if $gtk.args.inputs.mouse.down
           btn.clicked = true
-          #sprite.props[:path] = ''
-        else
+          sprite.props[:path] = btn.pressed_sprite_path
+        elsif $gtk.args.inputs.mouse.up and btn.clicked
           btn.clicked = false
-          #sprite.props[:path] = ''
-        end
-        if $gtk.args.inputs.mouse.click
+          sprite.props[:path] = btn.unpressed_sprite_path
           btn.action.call
-          puts 'click'
         end
+      else
+        btn.clicked = false
+        sprite.props[:path] = btn.unpressed_sprite_path
       end
     end
   end

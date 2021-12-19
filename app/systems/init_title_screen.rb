@@ -11,10 +11,10 @@ FF::Sys.new('InitTitleScreen', priority: 1) do
   sprite.props[:y] = btn_y
   sprite.props[:w] = btn_w
   sprite.props[:h] = btn_h
-  sprite.props[:path] = 'sprites/title/start.png'
+  #sprite.props[:path] = 'sprites/title/start.png'
   # start button
   FF::Ent.new(
-    FF::Cmp::Button.new(action: FF::Sys::StartGame),
+    FF::Cmp::Button.new(action: FF::Sys::StartGame, pressed_sprite_path: 'sprites/title/start_pressed.png', unpressed_sprite_path: 'sprites/title/start.png'),
     FF::Cmp::Hitbox.new(x: btn_x, y: btn_y, w: btn_w, h: btn_h),
     sprite,
     FF::Cmp::Title[0]
