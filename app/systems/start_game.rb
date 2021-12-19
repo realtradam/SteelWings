@@ -32,6 +32,16 @@ FF::Sys.new('StartGame', priority: 50 ) do
     )
   end
 
+  sprite = FF::Cmp::Sprite.new
+  sprite.props[:path] = 'sprites/kenny/Ships/ship_0011.png'
+  FF::Ent.new(
+    FF::Cmp::Boid.new(x: position_range.sample, y: position_range.sample, vx: 25, vy: 25, w: sprite.props[:w], h: sprite.props[:h]),
+    sprite,
+    debug_arrow,
+    FF::Cmp::SingletonCamera[0],
+    FF::Cmp::Follow.new(target: :mouse, strength: 500)
+  )
+
   FF::Stg.add(
     FF::Scn::BoidRules,
     FF::Scn::Debug,
