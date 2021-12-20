@@ -1,0 +1,1 @@
+FF::Cmp.new('PlayerTeam')
