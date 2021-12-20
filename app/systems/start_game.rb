@@ -28,7 +28,10 @@ FF::Sys.new('StartGame', priority: 50 ) do
     sprite,
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
-    FF::Cmp::Follow.new(target: :mouse, strength: 500)
+    FF::Cmp::Follow.new(target: :mouse, strength: 500),
+    FF::Cmp::SingletonPlayer[0],
+    FF::Cmp::Team.new(team: 'player'),
+    FF::Cmp::Weapon.new,
   )
 
   FF::Stg.add(

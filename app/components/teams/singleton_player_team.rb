@@ -1,3 +1,3 @@
-FF::Cmp.new('SingletonPlayerTeam',
+FF::Cmp.new('SingletonPlayer',
             singleton: true)
-FF::Cmp::SingletonPlayerTeam.new
+FF::Cmp::SingletonPlayer.new
