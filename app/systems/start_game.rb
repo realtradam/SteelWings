@@ -33,9 +33,14 @@ FF::Sys.new('StartGame', priority: 50 ) do
   end
 
   sprite = FF::Cmp::Sprite.new
-  sprite.props[:path] = 'sprites/kenny/Ships/ship_0011.png'
+  sprite.props[:path] = [
+    'sprites/kenny/Ships/Pintail.png',
+    'sprites/kenny/Ships/Osprey.png',
+    'sprites/kenny/Ships/Falcon.png',
+    'sprites/kenny/Ships/Grosbeak.png',
+  ].sample
   FF::Ent.new(
-    FF::Cmp::Boid.new(x: position_range.sample, y: position_range.sample, vx: 25, vy: 25, w: sprite.props[:w], h: sprite.props[:h]),
+    FF::Cmp::Boid.new(x: position_range.sample, y: position_range.sample, vx: 25, vy: 25, w: 32, h: 32),
     sprite,
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
