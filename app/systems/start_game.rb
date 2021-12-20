@@ -21,6 +21,13 @@ FF::Sys.new('StartGame', priority: 50 ) do
   ]
   position_range = (100..700).to_a
 
+  sprite = FF::Cmp::Sprite.new
+  sprite.props[:path] = 'sprites/background.png'
+  FF::Ent.new(
+    sprite,
+    FF::Cmp::SingletonCamera[0],
+    FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
+  )
   5.times do |pos|
     Factory::Osprey.new(x: position_range.sample, y: position_range.sample)
   end
@@ -32,11 +39,14 @@ FF::Sys.new('StartGame', priority: 50 ) do
     sprite,
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
+    FF::Cmp::BoidBounds.new,
     FF::Cmp::Follow.new(target: :mouse, strength: 500),
     FF::Cmp::SingletonPlayer[0],
     FF::Cmp::Team.new(team: 'player'),
     FF::Cmp::Weapon.new,
   )
+
+
 
   FF::Stg.add(
     FF::Scn::BoidRules,

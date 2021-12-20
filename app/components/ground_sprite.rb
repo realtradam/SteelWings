@@ -1,0 +1,21 @@
+FF::Cmp.new("Sprite", props: {
+  x: 640 - 50,
+  y: 360 - 50,
+  w: 100,
+  h: 100,
+  path: 'sprites/hexagon/red.png',
+  angle: 0,
+  a: 255,
+  r: 255,
+  g: 255,
+  b: 255,
+  source_x:  0,
+  source_y:  0,
+  source_w: -1,
+  source_h: -1,
+  flip_vertically: false,
+  flip_horizontally: false,
+  angle_anchor_x: 0.5,
+  angle_anchor_y: 0.5,
+  blendmode_enum: 1
+})
