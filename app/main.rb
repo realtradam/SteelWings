@@ -39,6 +39,7 @@ require 'app/systems/camera.rb'
 require 'app/systems/collision_damage.rb'
 require 'app/systems/death.rb'
 require 'app/systems/player_weapon.rb'
+require 'app/systems/move_camera.rb'
 
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/osprey.rb'
