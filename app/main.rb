@@ -18,6 +18,9 @@ require 'app/components/stats/hp.rb'
 require 'app/components/hitcircle.rb'
 require 'app/components/teams/singleton_player_team.rb'
 require 'app/components/teams/singleton_enemy_team.rb'
+require 'app/components/weapon.rb'
+require 'app/components/teams/team.rb'
+
 
 require 'app/systems/init_title_screen.rb'
 require 'app/systems/title_screen.rb'
@@ -35,6 +38,7 @@ require 'app/systems/debug/debug_render_vector_arrow.rb'
 require 'app/systems/camera.rb'
 require 'app/systems/collision_damage.rb'
 require 'app/systems/death.rb'
+require 'app/systems/player_weapon.rb'
 
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/osprey.rb'
