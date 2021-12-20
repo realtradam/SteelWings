@@ -15,7 +15,5 @@ FF::Scn::Camera.add(
 
     #camera.x = camera_pos[0]
     #camera.y = camera_pos[1]
-    puts camera.x
-    puts camera.y
   end
 )
