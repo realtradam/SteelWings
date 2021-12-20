@@ -8,6 +8,8 @@
 FF::Sys::InitTitleScreen.call
 def tick args
   args.outputs.background_color = [0,0,0]
+  args.outputs.solids << [-10_000, -10_000, 20_000, 20_000, 223, 246, 245]
+
   FelFlame::Stage.call
 
   # Spawn Bullet
