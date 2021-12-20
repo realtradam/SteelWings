@@ -8,7 +8,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
   FF::Cmp::Title[0].delete
   FF::Stg.remove FF::Scn::TitleScreen
 
-  debug_arrow = FF::Cmp::DebugVectorArrow.new(length: 5)
+  debug_arrow = FF::Cmp::SingletonDebugVectorArrow.new(length: 5)
   position = [
     {x: 100, y: 100},
     {x: 500, y: 500},

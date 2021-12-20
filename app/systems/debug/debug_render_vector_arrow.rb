@@ -1,8 +1,8 @@
 FF::Sys.new('DebugRenderVectorArrow', priority: 100) do
-  FF::Cmp::DebugVectorArrow[0].entities.each do |entity|
+  FF::Cmp::SingletonDebugVectorArrow[0].entities.each do |entity|
     boid = entity.components[FF::Cmp::Boid][0]
     sprite = entity.components[FF::Cmp::Sprite][0]
-    length = FF::Cmp::DebugVectorArrow[0].length
+    length = FF::Cmp::SingletonDebugVectorArrow[0].length
     #puts "vx: #{boid.vx}"
     #puts "cx: #{boid.cx}"
     boid_x = 0

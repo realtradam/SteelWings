@@ -4,11 +4,9 @@ FF::Scn::BoidRules.add(
       if hp.health <= 0
         component_hash = hp.entities[0].components.clone
         component_hash.each_pair do |manager, manager_array|
-          next if manager.equal?(FF::Cmp::SingletonCamera)
           next if manager.equal?(FF::Cmp::Hp)
-          next if manager.equal?(FF::Cmp::DebugVectorArrow)
           manager_array.each do |component|
-            # unless singleton
+            next if component.respond_to?(:singleton)
             component.delete
           end
         end

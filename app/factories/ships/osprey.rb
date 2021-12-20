@@ -13,7 +13,7 @@ class Factory
         FF::Cmp::Hp.new(health: 100),
         FF::Cmp::CollisionDamage.new(damage: 100),
         FF::Cmp::Hitcircle.new(r: 12),
-        FF::Cmp::DebugVectorArrow[0],
+        FF::Cmp::SingletonDebugVectorArrow[0],
         FF::Cmp::SingletonCamera[0],
       )
     end

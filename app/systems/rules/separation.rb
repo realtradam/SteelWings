@@ -14,7 +14,7 @@ FF::Scn::BoidRules.add(
         end
       end
 
-      #unless separation.entities[0].components[FF::Cmp::DebugVectorArrow].nil?
+      #unless separation.entities[0].components[FF::Cmp::SingletonDebugVectorArrow].nil?
       #  puts "newvec: #{newvec}"
       #  puts "cx: #{boid_update.cx} cy: #{boid_update.cy}"
       #  puts "vx: #{boid_update.vx} vy: #{boid_update.vy}"

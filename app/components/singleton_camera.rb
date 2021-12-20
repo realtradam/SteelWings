@@ -1,4 +1,5 @@
 FF::Cmp.new('SingletonCamera',
+            singleton: true,
             :x, :y,
             :zoom, :angle)
 
