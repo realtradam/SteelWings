@@ -17,19 +17,8 @@ FF::Sys.new('StartGame', priority: 50 ) do
   ]
   position_range = (100..700).to_a
 
-  25.times do |pos|
-    sprite = FF::Cmp::Sprite.new
-    sprite.props[:path] = 'sprites/kenny/Ships/ship_0011.png'
-    FF::Ent.new(
-      FF::Cmp::Boid.new(x: position_range.sample, y: position_range.sample, vx: 25, vy: 25, w: sprite.props[:w], h: sprite.props[:h]),
-      sprite,
-      FF::Cmp::BoidBounds.new(strength: 1),
-      FF::Cmp::BoidsAlignment.new(strength: 1),
-      FF::Cmp::BoidsSeparation.new(distance: 150, strength: 0.01),
-      FF::Cmp::BoidsCohesion.new(strength: 100),
-      debug_arrow,
-      FF::Cmp::SingletonCamera[0],
-    )
+  5.times do |pos|
+    Factory::Osprey.new(x: position_range.sample, y: position_range.sample)
   end
 
   FF::Stg.add(

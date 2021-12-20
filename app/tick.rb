@@ -10,6 +10,11 @@ def tick args
   args.outputs.background_color = [0,0,0]
   FelFlame::Stage.call
 
+  # Spawn Bullet
+  if args.inputs.keyboard.keys[:down].include?(:b)
+    Factory::Bullet.new(x: @camera.x, y: @camera.y)
+  end
+
   # Moving Camera
   if args.inputs.keyboard.keys[:down_or_held].include?(:d)
     @camera.x += (Math.cos(-@camera.angle * (Math::PI / 180.0)) * 5)
