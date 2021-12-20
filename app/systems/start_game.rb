@@ -1,10 +1,14 @@
 FF::Sys.new('StartGame', priority: 50 ) do
-  FF::Cmp::Title[0].entities.each do |entity|
+  thing = FF::Cmp::Title[0].entities.clone
+  thing.each do |entity|
     entity.components[FF::Cmp::Sprite][0].delete
-    entity.components[FF::Cmp::Button][0].delete
-    entity.components[FF::Cmp::Hitbox][0].delete
+    if (!entity.components[FF::Cmp::Button].nil? && !entity.components[FF::Cmp::Hitbox].nil?)
+      entity.components[FF::Cmp::Hitbox][0].delete
+      entity.components[FF::Cmp::Button][0].delete
+    end 
     entity.delete
   end
+
   FF::Cmp::Title[0].delete
   FF::Stg.remove FF::Scn::TitleScreen
 
