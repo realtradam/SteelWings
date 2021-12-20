@@ -1,7 +1,7 @@
 class Factory
   class Bullet
     def self.new(x:, y:, damage: 10, vx: 10, vy: 0)
-      puts 'new ent created'
+      #puts 'new ent created'
       sprite = FF::Cmp::Sprite.new
       sprite.props[:path] = 'sprites/kenny/Tiles/tile_0000.png'
       FF::Ent.new(
