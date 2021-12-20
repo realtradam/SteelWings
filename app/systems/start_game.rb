@@ -45,6 +45,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::Team.new(team: 'player'),
     FF::Cmp::Weapon.new,
     FF::Cmp::BoidMinimumSpeed.new,
+    FF::Cmp::DecaySpeed.new(strength: 0.9),
   )
 
 
