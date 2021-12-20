@@ -12,6 +12,7 @@ class Factory
         FF::Cmp::Hp.new(health: 1),
         FF::Cmp::Team.new,
         FF::Cmp::CollisionDamage.new(damage: damage),
+        FF::Cmp::SingletonBullet[0],
       )
     end
   end

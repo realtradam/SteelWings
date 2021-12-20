@@ -15,6 +15,7 @@ require 'app/components/rules/minimum_speed.rb'
 require 'app/components/rules/decay_speed.rb'
 require 'app/components/debug/singleton_debug_vector_arrow.rb'
 require 'app/components/singleton_camera.rb'
+require 'app/components/singleton_bullet.rb'
 require 'app/components/stats/collision_damage.rb'
 require 'app/components/stats/hp.rb'
 require 'app/components/hitcircle.rb'
@@ -44,8 +45,7 @@ require 'app/systems/death.rb'
 require 'app/systems/player_weapon.rb'
 require 'app/systems/move_camera.rb'
 require 'app/systems/rules/minimum_speed.rb'
-
-
+require 'app/systems/cleanup_bullets.rb'
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/osprey.rb'
 

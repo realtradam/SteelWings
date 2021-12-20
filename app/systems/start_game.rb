@@ -53,6 +53,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
   FF::Stg.add(
     FF::Scn::BoidRules,
     FF::Scn::Camera,
+    FF::Scn::Cleanup,
     FF::Scn::Debug,
   )
 
