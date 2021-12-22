@@ -1,6 +1,6 @@
 FF::Scn::TitleScreen.add(
   FF::Sys.new('TitleScreen', priority: 50) do
-    FF::Cmp::Title[0].entities.each do |entity|
+    FF::Cmp::SingletonTitle[0].entities.each do |entity|
       next unless entity.components.key?(FF::Cmp::Button)
 
       btn = entity.components[FF::Cmp::Button][0]

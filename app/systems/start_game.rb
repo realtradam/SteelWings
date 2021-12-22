@@ -1,5 +1,5 @@
 FF::Sys.new('StartGame', priority: 50 ) do
-  thing = FF::Cmp::Title[0].entities.clone
+  thing = FF::Cmp::SingletonTitle[0].entities.clone
   thing.each do |entity|
     entity.components[FF::Cmp::Sprite][0].delete
     if (!entity.components[FF::Cmp::Button].nil? && !entity.components[FF::Cmp::Hitbox].nil?)
@@ -9,7 +9,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     entity.delete
   end
 
-  FF::Cmp::Title[0].delete
+  FF::Cmp::SingletonTitle[0].delete
   FF::Stg.remove FF::Scn::TitleScreen
 
   debug_arrow = FF::Cmp::SingletonDebugVectorArrow.new(length: 5)

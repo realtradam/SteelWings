@@ -4,7 +4,6 @@ FF::Sys.new('InitTitleScreen', priority: 1) do
   btn_x = 1280/2 - btn_w/2
   btn_y = 200
   
-  title_cmp = FF::Cmp.new('Title').new
   bg_sprite = FF::Cmp::Sprite.new
   title_sprite = FF::Cmp::Sprite.new
   btn_sprite = FF::Cmp::Sprite.new
@@ -24,17 +23,17 @@ FF::Sys.new('InitTitleScreen', priority: 1) do
   btn_sprite.props[:h] = btn_h
   FF::Ent.new(
     bg_sprite,
-    title_cmp
+    FF::Cmp::SingletonTitle[0]
   )
   FF::Ent.new(
     FF::Cmp::Button.new(action: FF::Sys::StartGame, pressed_sprite_path: 'sprites/title/start_pressed.png', unpressed_sprite_path: 'sprites/title/start.png'),
     FF::Cmp::Hitbox.new(x: btn_x, y: btn_y, w: btn_w, h: btn_h),
     btn_sprite,
-    title_cmp
+    FF::Cmp::SingletonTitle[0]
   )
   FF::Ent.new(
     title_sprite,
-    title_cmp
+    FF::Cmp::SingletonTitle[0]
   )
 
 end

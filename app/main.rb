@@ -23,6 +23,7 @@ require 'app/components/teams/singleton_player_team.rb'
 require 'app/components/teams/singleton_enemy_team.rb'
 require 'app/components/weapon.rb'
 require 'app/components/teams/team.rb'
+require 'app/components/singleton_title.rb'
 
 
 require 'app/systems/init_title_screen.rb'
