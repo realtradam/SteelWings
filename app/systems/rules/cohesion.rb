@@ -10,7 +10,7 @@ FF::Scn::BoidRules.add(
       #puts boid.x
       #puts boid.y
     end
-    
+
     #puts center_mass
     FF::Cmp::BoidsCohesion.each do |cohesion|
       boid_update = cohesion.entities[0].components[FF::Cmp::Boid][0]
@@ -20,8 +20,8 @@ FF::Scn::BoidRules.add(
       move_boid[0] /= boids_count - 1.0
       move_boid[1] /= boids_count - 1.0
 
-      boid_update.cx += (move_boid[0] - boid_update.x) / cohesion.strength.to_i
-      boid_update.cy += (move_boid[1] - boid_update.y) / cohesion.strength.to_i
+      boid_update.cx += (move_boid[0] - boid_update.x) * cohesion.strength.to_i
+      boid_update.cy += (move_boid[1] - boid_update.y) * cohesion.strength.to_i
     end
   end
 )
