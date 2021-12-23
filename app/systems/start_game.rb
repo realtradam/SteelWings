@@ -9,7 +9,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     entity.delete
   end
 
-  FF::Cmp::SingletonTitle[0].delete
+  FF::Cmp::SingletonTitle[0].title_screen = false
   FF::Stg.remove FF::Scn::TitleScreen
 
   debug_arrow = FF::Cmp::SingletonDebugVectorArrow.new(length: 5)
@@ -28,7 +28,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
   )
-  5.times do |pos|
+  15.times do |pos|
     Factory::Osprey.new(x: position_range.sample, y: position_range.sample)
   end
 
