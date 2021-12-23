@@ -1,3 +1,5 @@
+require 'app/helpers/vectors/magnitude.rb'
+
 require 'app/felflame.rb'
 
 require 'app/scenes/scenes.rb'
@@ -50,6 +52,7 @@ require 'app/systems/cleanup_bullets.rb'
 require 'app/systems/ai/scatter.rb'
 require 'app/systems/ai/rejoin.rb'
 require 'app/systems/ai/target_player.rb'
+
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/osprey.rb'
 

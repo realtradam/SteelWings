@@ -1,3 +1,3 @@
 
 FF::Cmp.new('BoidMinimumSpeed',
-            speed: 5)
+            speed: 1)

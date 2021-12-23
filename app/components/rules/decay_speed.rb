@@ -1,2 +1,2 @@
 FF::Cmp.new('DecaySpeed',
-            strength: 0.8)
+            strength: 1)

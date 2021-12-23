@@ -1,2 +1,2 @@
 FF::Cmp.new('BoidsAlignment',
-           strength: 10)
+            strength: 1)

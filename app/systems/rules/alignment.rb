@@ -17,8 +17,8 @@ FF::Scn::BoidRules.add(
       move_boid[0] /= boids_count - 1.0
       move_boid[1] /= boids_count - 1.0
 
-      boid_update.cx += (move_boid[0] - boid_update.vx) / alignment.strength
-      boid_update.cy += (move_boid[1] - boid_update.vy) / alignment.strength
+      boid_update.cx += (move_boid[0] - boid_update.vx) * alignment.strength
+      boid_update.cy += (move_boid[1] - boid_update.vy) * alignment.strength
     end
   end
 )

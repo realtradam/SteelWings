@@ -1,3 +1,3 @@
 FF::Cmp.new('BoidsSeparation',
-            :strength,
+            strength: 1,
             distance: 500)

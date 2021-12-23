@@ -1,2 +1,2 @@
 FF::Cmp.new('BoidsCohesion',
-            strength: 100)
+            strength: 1)
