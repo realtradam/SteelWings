@@ -1,7 +1,7 @@
 FF::Sys.new("Scatter", priority: 40) do
   FF::Cmp::BoidsSeparation.each do |sep|
     sep.distance = 200
-    puts 'remove align/cohesion/follow'.upcase
+    #puts 'remove align/cohesion/follow'.upcase
     alignment_mgr = sep.entities[0].components[FF::Cmp::BoidsAlignment]
     cohesion_mgr = sep.entities[0].components[FF::Cmp::BoidsCohesion]
     follow_mgr = sep.entities[0].components[FF::Cmp::Follow]

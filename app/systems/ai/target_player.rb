@@ -1,6 +1,6 @@
 FF::Sys.new("TargetPlayer", priority: 40) do
   FF::Cmp::BoidsSeparation.each do |sep|
-    puts 'target player'.upcase
+    #puts 'target player'.upcase
     sep.distance = 200
     follow_mgr = sep.entities[0].components[FF::Cmp::Follow]
     player_boid = FF::Cmp::SingletonPlayer[0].entities[0].components[FF::Cmp::Boid][0]

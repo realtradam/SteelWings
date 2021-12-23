@@ -13,8 +13,8 @@ def tick args
   @timer += 1
   if @timer >= 100 && !FF::Cmp::SingletonTitle[0].title_screen
     @timer -= 100
-    puts "scatter: #{@scatter}"
-    puts "target: #{@target}"
+    #puts "scatter: #{@scatter}"
+    #puts "target: #{@target}"
     @scatter = !@scatter
     if @scatter
       FF::Sys::Scatter.call

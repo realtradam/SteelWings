@@ -1,6 +1,6 @@
 FF::Sys.new("Rejoin", priority: 40) do
   FF::Cmp::BoidsSeparation.each do |sep|
-    puts 'add align/cohesion'.upcase
+    #puts 'add align/cohesion'.upcase
     sep.distance = 150 
     alignment_mgr = sep.entities[0].components[FF::Cmp::BoidsAlignment]
     cohesion_mgr = sep.entities[0].components[FF::Cmp::BoidsCohesion]
