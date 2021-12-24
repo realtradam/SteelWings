@@ -28,9 +28,9 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
   )
-  #15.times do |pos|
-  #  Factory::Osprey.new(x: position_range.sample, y: position_range.sample)
-  #end
+  8.times do |pos|
+    Factory::SampleEnemy.new(x: position_range.sample, y: position_range.sample)
+  end
 
   sprite = FF::Cmp::Sprite.new
   sprite.props[:path] = [
@@ -44,6 +44,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     sprite,
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
+    FF::Cmp::SingletonMoveCamera[0],
     FF::Cmp::BoidBounds.new,
     FF::Cmp::Follow.new(target: :mouse, strength: 0.007),
     FF::Cmp::SingletonPlayer[0],
@@ -51,6 +52,9 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::Weapon.new,
     FF::Cmp::BoidMinimumSpeed.new(speed: 5),
     FF::Cmp::DecaySpeed.new(strength: 0.8),
+    FF::Cmp::Hp.new(health: 100),
+    FF::Cmp::CollisionDamage.new(damage: 100),
+    FF::Cmp::Hitcircle.new(r: 32),
   )
 
 
