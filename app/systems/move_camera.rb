@@ -1,9 +1,11 @@
 FF::Scn::Camera.add(
   FF::Sys.new('MoveCamera', priority: 100) do
-    camera = FF::Cmp::SingletonCamera[0]
-    player_boid = FF::Cmp::SingletonPlayer[0].entities[0].components[FF::Cmp::Boid][0]
-    camera.x = player_boid.x
-    camera.y = player_boid.y
+    unless FF::Cmp::SingletonPlayer[0].entities[0].nil?
+      camera = FF::Cmp::SingletonCamera[0]
+      player_boid = FF::Cmp::SingletonPlayer[0].entities[0].components[FF::Cmp::Boid][0]
+      camera.x = player_boid.x
+      camera.y = player_boid.y
+    end
     #mouse = $gtk.args.inputs.mouse
     #camera_pos = [0,0]
     #
