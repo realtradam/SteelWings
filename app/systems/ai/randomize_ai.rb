@@ -1,4 +1,4 @@
-FF::Scn::AIRandomizer.add(
+FF::Scn::BoidRules.add(
   FF::Sys.new('RandomizeAI', priority: 50) do
     timer = FF::Cmp::SingletonAITimer[0]
     timer.timer += 1
@@ -25,7 +25,8 @@ FF::Scn::AIRandomizer.add(
         FF::Sys::TargetPlayer.call
         puts 'target'
       end
-      timer.interval = (300..1200).to_a.sample
+      #timer.interval = (300..1200).to_a.sample
+      timer.interval = 60
       puts timer.interval
       timer.timer = 0
     end
