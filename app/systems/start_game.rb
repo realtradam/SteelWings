@@ -1,6 +1,5 @@
 FF::Sys.new('StartGame', priority: 50 ) do
-  thing = FF::Cmp::SingletonTitle[0].entities.clone
-  thing.each do |entity|
+  FF::Cmp::SingletonTitle[0].entities.reverse_each do |entity|
     entity.components[FF::Cmp::Sprite][0].delete
     if (!entity.components[FF::Cmp::Button].nil? && !entity.components[FF::Cmp::Hitbox].nil?)
       entity.components[FF::Cmp::Hitbox][0].delete

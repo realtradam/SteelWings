@@ -4,7 +4,7 @@ FF::Scn::BoidRules.add(
     timer.timer += 1
     if timer.timer > timer.interval
       random_ai_pick = FF::Cmp::SingletonRandomAIPick[0]
-      random_ai_pick.entities.clone.each do |entity|
+      random_ai_pick.entities.reverse_each do |entity|
         entity.remove random_ai_pick
         #puts 'remove pick'
       end
