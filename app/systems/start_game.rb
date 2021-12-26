@@ -63,7 +63,6 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Scn::BoidRules,
     FF::Scn::Camera,
     FF::Scn::Cleanup,
-    FF::Scn::Debug,
   )
 
   FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)
