@@ -19,7 +19,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     {x: 700, y: 200},
     {x: 150, y: 250},
   ]
-  position_range = (100..700).to_a
+  position_range = (500..1000).to_a
 
   sprite = FF::Cmp::Sprite.new
   sprite.props[:path] = 'sprites/background.png'
@@ -40,7 +40,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     'sprites/kenny/Ships/Grosbeak.png',
   ].sample
   FF::Ent.new(
-    FF::Cmp::Boid.new(x: position_range.sample, y: position_range.sample, vx: 25, vy: 25, w: 32, h: 32),
+    FF::Cmp::Boid.new(x: 0, y: 0, vx: 25, vy: 25, w: 32, h: 32),
     sprite,
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
@@ -64,6 +64,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Scn::Camera,
     FF::Scn::Cleanup,
     FF::Scn::Debug,
+    FF::Scn::AIRandomizer,
   )
 
   FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)

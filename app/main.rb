@@ -27,6 +27,8 @@ require 'app/components/teams/singleton_enemy_team.rb'
 require 'app/components/weapon.rb'
 require 'app/components/teams/team.rb'
 require 'app/components/singleton_title.rb'
+require 'app/components/singleton_ai_timer.rb'
+require 'app/components/singleton_random_ai_pick.rb'
 
 
 require 'app/systems/init_title_screen.rb'
@@ -53,6 +55,7 @@ require 'app/systems/cleanup_bullets.rb'
 require 'app/systems/ai/scatter.rb'
 require 'app/systems/ai/rejoin.rb'
 require 'app/systems/ai/target_player.rb'
+require 'app/systems/ai/randomize_ai.rb'
 
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/sample_enemy.rb'
