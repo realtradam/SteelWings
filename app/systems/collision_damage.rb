@@ -8,6 +8,10 @@ FF::Scn::BoidRules.add(
         #puts 'passed first check'
         boid_target = hitcircle_target.entities[0].components[FF::Cmp::Boid][0]
         if Math.sqrt(((boid_self.x - boid_target.x) ** 2) + ((boid_self.y - boid_target.y) ** 2)) < (hitcircle_target.r + hitcircle_self.r)
+          puts 'checks here'.upcase
+          puts 'hp dont exist' if hitcircle_target.entities[0].components[FF::Cmp::Hp].nil?
+          puts 'collision damage dont exist' if hitcircle_target.entities[0].components[FF::Cmp::CollisionDamage].nil?
+          puts 'checks end'.upcase
           hitcircle_target.entities[0].components[FF::Cmp::Hp][0].health -= hitcircle_self.entities[0].components[FF::Cmp::CollisionDamage][0].damage
         end
       end

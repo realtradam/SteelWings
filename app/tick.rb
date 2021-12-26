@@ -4,29 +4,8 @@
 
 #@pause = false
 @camera = FF::Cmp::SingletonCamera[0]
-@scatter = false
-@target = true
-@timer = 0
 FF::Sys::InitTitleScreen.call
 def tick args
-  #puts @timer
-  @timer += 1
-  if @timer >= 100 && !FF::Cmp::SingletonTitle[0].title_screen
-    @timer -= 100
-    #puts "scatter: #{@scatter}"
-    #puts "target: #{@target}"
-    @scatter = !@scatter
-    if @scatter
-      FF::Sys::Scatter.call
-    elsif @target
-      @target = false
-      FF::Sys::Rejoin.call
-    else
-      @target = true
-      FF::Sys::TargetPlayer.call
-    end
-  end
-
   args.outputs.background_color = [0,0,0]
   args.outputs.solids << [-10_000, -10_000, 20_000, 20_000, 223, 246, 245]
 
