@@ -9,10 +9,10 @@ FF::Sys.new('StartGame', priority: 50 ) do
     entity.delete
   end
 
-  FF::Cmp::SingletonTitle[0].title_screen = false
-  FF::Stg.remove FF::Scn::TitleScreen
+  #FF::Cmp::SingletonTitle[0].title_screen = false
+  #FF::Stg.remove FF::Scn::TitleScreen
 
-  debug_arrow = FF::Cmp::SingletonDebugVectorArrow.new(length: 5)
+  debug_arrow = FF::Cmp::SingletonDebugVectorArrow[0]
   position = [
     {x: 100, y: 100},
     {x: 500, y: 500},
@@ -64,7 +64,6 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Scn::Camera,
     FF::Scn::Cleanup,
     FF::Scn::Debug,
-    FF::Scn::AIRandomizer,
   )
 
   FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)
