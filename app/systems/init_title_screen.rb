@@ -1,9 +1,9 @@
 FF::Sys.new('InitTitleScreen', priority: 1) do
-  btn_w = 190
-  btn_h = 49
-  btn_x = 1280/2 - btn_w/2
-  btn_y = 200
-  
+  FF::Stg.remove(
+    FF::Scn::BoidRules,
+    FF::Scn::Camera,
+    FF::Scn::Cleanup,
+  )
   bg_sprite = FF::Cmp::Sprite.new
   bg_sprite.props.merge!({
     x: 0,
@@ -21,6 +21,10 @@ FF::Sys.new('InitTitleScreen', priority: 1) do
     path: 'sprites/title/title.png'
   })
   btn_sprite = FF::Cmp::Sprite.new
+  btn_w = 190
+  btn_h = 49
+  btn_x = 1280/2 - btn_w/2
+  btn_y = 200
   btn_sprite.props.merge!({
     x: btn_x,
     y: btn_y,

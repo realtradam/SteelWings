@@ -32,7 +32,8 @@ require 'app/components/singleton_random_ai_pick.rb'
 
 
 require 'app/systems/init_title_screen.rb'
-require 'app/systems/title_screen.rb'
+require 'app/systems/ui/button.rb'
+require 'app/systems/ui/return_to_menu.rb'
 require 'app/systems/start_game.rb'
 require 'app/systems/end_game.rb'
 require 'app/systems/render.rb'

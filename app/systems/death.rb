@@ -5,8 +5,7 @@ FF::Scn::BoidRules.add(
         component_hash = hp.entities[0].components.clone
         component_hash.each_pair do |manager, manager_array|
           if manager.equal?(FF::Cmp::SingletonPlayer)
-            FF::Sys::Gameover.call
-            #FF::Scn::BoidRules.remove FF::Sys::Follow
+            FF::Sys::EndGame.call
           end
           next if manager.equal?(FF::Cmp::Hp)
           manager_array.each do |component|
