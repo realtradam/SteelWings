@@ -29,8 +29,11 @@ require 'app/components/teams/team.rb'
 require 'app/components/singleton_title.rb'
 require 'app/components/singleton_ai_timer.rb'
 require 'app/components/singleton_random_ai_pick.rb'
+require 'app/components/label.rb'
+require 'app/components/singleton_score.rb'
 
 
+require 'app/systems/ui/score.rb'
 require 'app/systems/init_title_screen.rb'
 require 'app/systems/ui/button.rb'
 require 'app/systems/ui/return_to_menu.rb'

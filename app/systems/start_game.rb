@@ -56,14 +56,38 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::Hitcircle.new(r: 32),
   )
 
-
+  score_label_shadow = FF::Cmp::Label.new
+  score_label_shadow.props.merge!({
+    x: 50,
+    y: 667,
+    text: '0',
+    size_enum: 8,
+    r: 100,
+    g: 100,
+    b: 100,
+    font: 'fonts/kenvector_future_thin.ttf',
+  })
+  score_label = FF::Cmp::Label.new
+  score_label.props.merge!({
+    x: 50,
+    y: 670,
+    text: '0',
+    size_enum: 8,
+    font: 'fonts/kenvector_future_thin.ttf',
+  })
+  score = FF::Cmp::SingletonScore[0]
+  score.score = 0
+  FF::Ent.new(
+    score_label,
+    score_label_shadow,
+    score,
+  )
 
   FF::Stg.add(
     FF::Scn::BoidRules,
     FF::Scn::Camera,
     FF::Scn::Cleanup,
   )
-
   FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)
   @pause = false
   #FF::Stg.remove FF::Scn::BoidRules

@@ -5,6 +5,8 @@ FF::Scn::BoidRules.add(
         hp.entities[0].components.each do |manager, manager_array|
           if manager.equal?(FF::Cmp::SingletonPlayer)
             FF::Sys::EndGame.call
+          elsif manager.equal?(FF::Cmp::SingletonEnemyTeam)
+            FF::Sys::Score.call
           end
           next if manager.equal?(FF::Cmp::Hp)
           manager_array.reverse_each do |component|
