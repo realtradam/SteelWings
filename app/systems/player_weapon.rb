@@ -13,6 +13,7 @@ FF::Scn::BoidRules.add(
           bullet = Factory::Bullet.new(damage: weapon.damage, vx: (boid.vx/mag) * weapon.speed, vy: (boid.vy/mag) * weapon.speed, x: boid.x, y: boid.y)
           bullet.remove(bullet.components[FF::Cmp::Team][0])
           bullet.add(FF::Cmp::Team.new(team: 'player'))
+          $gtk.args.gtk.queue_sound "sounds/shoot.mp3"
         end
       end
     end
