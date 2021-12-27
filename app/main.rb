@@ -58,6 +58,7 @@ require 'app/systems/ai/scatter.rb'
 require 'app/systems/ai/rejoin.rb'
 require 'app/systems/ai/target_player.rb'
 require 'app/systems/ai/randomize_ai.rb'
+require 'app/systems/spawn_enemy.rb'
 
 require 'app/factories/bullet.rb'
 require 'app/factories/ships/sample_enemy.rb'
