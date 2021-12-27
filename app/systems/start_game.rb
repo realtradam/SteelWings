@@ -18,7 +18,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     {x: 700, y: 200},
     {x: 150, y: 250},
   ]
-  position_range = (500..1000).to_a
+  position_range = (400..(1280*2)).to_a
 
   sprite = FF::Cmp::Sprite.new
   sprite.props[:path] = 'sprites/background.png'
@@ -27,8 +27,9 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
   )
-  8.times do |pos|
-    Factory::SampleEnemy.new(x: position_range.sample, y: position_range.sample)
+  posneg = [1,-1]
+  16.times do |pos|
+    Factory::SampleEnemy.new(x: position_range.sample * posneg.sample, y: position_range.sample * posneg.sample)
   end
 
   sprite = FF::Cmp::Sprite.new
@@ -44,26 +45,50 @@ FF::Sys.new('StartGame', priority: 50 ) do
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::SingletonMoveCamera[0],
-    FF::Cmp::BoidBounds.new,
+    FF::Cmp::BoidBounds.new(strength: 3),
     FF::Cmp::Follow.new(target: :mouse, strength: 0.007),
     FF::Cmp::SingletonPlayer[0],
     FF::Cmp::Team.new(team: 'player'),
     FF::Cmp::Weapon.new,
     FF::Cmp::BoidMinimumSpeed.new(speed: 5),
     FF::Cmp::DecaySpeed.new(strength: 0.8),
-    FF::Cmp::Hp.new(health: 100),
+    FF::Cmp::Hp.new(health: 300),
     FF::Cmp::CollisionDamage.new(damage: 100),
-    FF::Cmp::Hitcircle.new(r: 32),
+    FF::Cmp::Hitcircle.new(r: 16),
   )
 
-
+  score_label_shadow = FF::Cmp::Label.new
+  score_label_shadow.props.merge!({
+    x: 50,
+    y: 667,
+    text: '0',
+    size_enum: 8,
+    r: 100,
+    g: 100,
+    b: 100,
+    font: 'fonts/kenvector_future_thin.ttf',
+  })
+  score_label = FF::Cmp::Label.new
+  score_label.props.merge!({
+    x: 50,
+    y: 670,
+    text: '0',
+    size_enum: 8,
+    font: 'fonts/kenvector_future_thin.ttf',
+  })
+  score = FF::Cmp::SingletonScore[0]
+  score.score = 0
+  FF::Ent.new(
+    score_label,
+    score_label_shadow,
+    score,
+  )
 
   FF::Stg.add(
     FF::Scn::BoidRules,
     FF::Scn::Camera,
     FF::Scn::Cleanup,
   )
-
   FF::Scn::Debug.add(FF::Sys::DebugRenderVectorArrow)
   @pause = false
   #FF::Stg.remove FF::Scn::BoidRules

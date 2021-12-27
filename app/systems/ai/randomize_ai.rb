@@ -9,7 +9,7 @@ FF::Scn::BoidRules.add(
         #puts 'remove pick'
       end
       FF::Cmp::BoidsSeparation.each do |sep|
-        if rand < 0.3
+        if rand < 0.05
           sep.entities[0].add random_ai_pick
           #puts 'pick'
         end
@@ -26,7 +26,7 @@ FF::Scn::BoidRules.add(
         #puts 'target'
       end
       #timer.interval = (300..1200).to_a.sample
-      timer.interval = 60
+      timer.interval = (5..20).to_a.sample
       #puts timer.interval
       timer.timer = 0
     end
