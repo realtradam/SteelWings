@@ -5,7 +5,8 @@ FF::Sys.new("Scatter", priority: 40) do
     # what it was before and that means it will force a
     # seperation to happen even if the default value is
     # changed and you forget to update this number here
-    sep.distance = Factory::SampleEnemy.defaults[:boids_seperation_distance] * 3
+    sep.distance = Factory::SampleEnemy.defaults[:boids_seperation_distance] * 10
+    sep.strength = Factory::SampleEnemy.defaults[:boids_seperation_strength]
     #puts 'remove align/cohesion/follow'.upcase
     alignment_mgr = entity.components[FF::Cmp::BoidsAlignment]
     cohesion_mgr = entity.components[FF::Cmp::BoidsCohesion]

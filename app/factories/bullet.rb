@@ -8,7 +8,7 @@ class Factory
         sprite,
         FF::Cmp::Boid.new(x: x, y: y, vx: vx, vy: vy, w: 16, h: 16),
         FF::Cmp::SingletonCamera[0],
-        FF::Cmp::Hitcircle.new(r: 10),
+        FF::Cmp::Hitcircle.new(r: 20),
         FF::Cmp::Hp.new(health: 1),
         FF::Cmp::Team.new,
         FF::Cmp::CollisionDamage.new(damage: damage),

@@ -18,7 +18,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     {x: 700, y: 200},
     {x: 150, y: 250},
   ]
-  position_range = (500..1000).to_a
+  position_range = (400..(1280*2)).to_a
 
   sprite = FF::Cmp::Sprite.new
   sprite.props[:path] = 'sprites/background.png'
@@ -27,8 +27,9 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
   )
-  8.times do |pos|
-    Factory::SampleEnemy.new(x: position_range.sample, y: position_range.sample)
+  posneg = [1,-1]
+  20.times do |pos|
+    Factory::SampleEnemy.new(x: position_range.sample * posneg.sample, y: position_range.sample * posneg.sample)
   end
 
   sprite = FF::Cmp::Sprite.new
@@ -44,16 +45,16 @@ FF::Sys.new('StartGame', priority: 50 ) do
     debug_arrow,
     FF::Cmp::SingletonCamera[0],
     FF::Cmp::SingletonMoveCamera[0],
-    FF::Cmp::BoidBounds.new,
+    FF::Cmp::BoidBounds.new(strength: 3),
     FF::Cmp::Follow.new(target: :mouse, strength: 0.007),
     FF::Cmp::SingletonPlayer[0],
     FF::Cmp::Team.new(team: 'player'),
     FF::Cmp::Weapon.new,
     FF::Cmp::BoidMinimumSpeed.new(speed: 5),
     FF::Cmp::DecaySpeed.new(strength: 0.8),
-    FF::Cmp::Hp.new(health: 100),
+    FF::Cmp::Hp.new(health: 300),
     FF::Cmp::CollisionDamage.new(damage: 100),
-    FF::Cmp::Hitcircle.new(r: 32),
+    FF::Cmp::Hitcircle.new(r: 16),
   )
 
 

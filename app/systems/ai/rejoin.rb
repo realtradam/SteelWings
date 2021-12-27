@@ -2,6 +2,7 @@ FF::Sys.new("Rejoin", priority: 40) do
   FF::Cmp::SingletonRandomAIPick[0].entities.each do |entity|
     sep = entity.components[FF::Cmp::BoidsSeparation][0]
     sep.distance = Factory::SampleEnemy.defaults[:boids_seperation_distance]
+    sep.strength = Factory::SampleEnemy.defaults[:boids_seperation_strength]
     alignment_mgr = entity.components[FF::Cmp::BoidsAlignment]
     cohesion_mgr = entity.components[FF::Cmp::BoidsCohesion]
     if alignment_mgr.nil? || alignment_mgr.empty?

@@ -3,15 +3,15 @@ class Factory
     def self.defaults
       @defaults ||= {
         boid_bounds_strength: 0.6,
-        boids_alignment_strength: 0.005,
-        boids_seperation_strength: 0.005,
-        boids_seperation_distance: 50,
-        boids_cohesion_strength: 0.003,
+        boids_alignment_strength: 0.002,
+        boids_seperation_strength: 0.001,
+        boids_seperation_distance: 150,
+        boids_cohesion_strength: 0.0005,
         hp_health: 100,
         collision_damage_damage: 100,
         hitcircle_r: 12,
-        boid_minimum_speed_speed: 5,
-        decay_speed_multiplier: 0.9,
+        boid_minimum_speed_speed: 7,
+        decay_speed_multiplier: 0.8,
       }
     end
     def self.new(x: 0, y: 0, vx: -3, vy: -3)
