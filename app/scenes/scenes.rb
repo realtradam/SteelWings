@@ -4,5 +4,5 @@ FF::Scn.new('Cleanup')
 FF::Stg.add(
   FF::Scn.new('UI'),
   FF::Scn.new('Render'),
-  FF::Scn.new('Debug')
 )
+FF::Scn.new('Debug')

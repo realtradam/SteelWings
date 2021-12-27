@@ -41,6 +41,7 @@ class Factory
         FF::Cmp::Team.new,
         FF::Cmp::SingletonDebugVectorArrow[0],
         FF::Cmp::SingletonCamera[0],
+        FF::Cmp::SingletonEnemyTeam[0],
       )
     end
   end
