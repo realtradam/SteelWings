@@ -2,7 +2,7 @@ devid=argo
 devtitle=Arnold and Tradam
 gameid=steelwings
 gametitle=SteelWings
-version=0.8.2
+version=1.0
 #icon=metadata/icon.png
 
 # Uncomment the entry below to bytecode compile your Ruby code (Pro License Only)
