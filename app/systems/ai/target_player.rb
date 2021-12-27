@@ -6,7 +6,7 @@ FF::Sys.new("TargetPlayer", priority: 40) do
     follow_mgr = entity.components[FF::Cmp::Follow]
     player_boid = FF::Cmp::SingletonPlayer[0].entities[0].components[FF::Cmp::Boid][0]
     if follow_mgr.nil? || follow_mgr.empty?
-      entity.add FF::Cmp::Follow.new(target: player_boid, strength: 0.5)
+      entity.add FF::Cmp::Follow.new(target: player_boid, strength: 0.6)
     end
   end
 end

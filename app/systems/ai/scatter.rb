@@ -1,10 +1,6 @@
 FF::Sys.new("Scatter", priority: 40) do
   FF::Cmp::SingletonRandomAIPick[0].entities.each do |entity|
     sep = entity.components[FF::Cmp::BoidsSeparation][0]
-    # I did times 3 becase then it will always be greater then
-    # what it was before and that means it will force a
-    # seperation to happen even if the default value is
-    # changed and you forget to update this number here
     sep.distance = Factory::SampleEnemy.defaults[:boids_seperation_distance] * 10
     sep.strength = Factory::SampleEnemy.defaults[:boids_seperation_strength]
     #puts 'remove align/cohesion/follow'.upcase

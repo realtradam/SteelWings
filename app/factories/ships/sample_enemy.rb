@@ -4,7 +4,7 @@ class Factory
       @defaults ||= {
         boid_bounds_strength: 0.6,
         boids_alignment_strength: 0.002,
-        boids_seperation_strength: 0.001,
+        boids_seperation_strength: 0.0005,
         boids_seperation_distance: 150,
         boids_cohesion_strength: 0.0005,
         hp_health: 100,

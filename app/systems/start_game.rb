@@ -28,7 +28,7 @@ FF::Sys.new('StartGame', priority: 50 ) do
     FF::Cmp::Boid.new(h: 1920 * 2, w: 1920 * 2)
   )
   posneg = [1,-1]
-  20.times do |pos|
+  16.times do |pos|
     Factory::SampleEnemy.new(x: position_range.sample * posneg.sample, y: position_range.sample * posneg.sample)
   end
 
